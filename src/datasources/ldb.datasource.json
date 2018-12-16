@@ -1,6 +1,10 @@
 {
-  "name": "ldb",
-  "connector": "memory",
-  "localStorage": "lb4",
-  "file": "./data/db.json"
+  "name": "db",
+  "connector": "postgresql",
+  "url": "",
+  "host": "localhost",
+  "port": 5432,
+  "user": "ballotadmin",
+  "password": "ballotpass3",
+  "database": "ballots"
 }
