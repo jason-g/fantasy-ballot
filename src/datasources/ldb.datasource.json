@@ -1,0 +1,6 @@
+{
+  "name": "ldb",
+  "connector": "memory",
+  "localStorage": "lb4",
+  "file": "./data/db.json"
+}
