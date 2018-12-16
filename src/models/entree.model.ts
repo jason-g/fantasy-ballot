@@ -1,4 +1,4 @@
-import {Entity, model, property} from '@loopback/repository';
+import { Entity, model, property } from '@loopback/repository';
 
 @model()
 export class Entree extends Entity {
@@ -30,6 +30,12 @@ export class Entree extends Entity {
     required: true,
   })
   display_content: string;
+
+  @property({
+    type: 'number',
+    required: true,
+  })
+  category_id: number;
 
   constructor(data?: Partial<Entree>) {
     super(data);
