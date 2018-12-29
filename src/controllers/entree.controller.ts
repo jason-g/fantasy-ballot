@@ -16,20 +16,20 @@ import {
   del,
   requestBody,
 } from '@loopback/rest';
-import {Entree} from '../models';
-import {EntreeRepository} from '../repositories';
+import { Category, Entree } from '../models';
+import { EntreeRepository } from '../repositories';
 
 export class EntreeController {
   constructor(
     @repository(EntreeRepository)
-    public entreeRepository : EntreeRepository,
-  ) {}
+    public entreeRepository: EntreeRepository,
+  ) { }
 
   @post('/entrees', {
     responses: {
       '200': {
         description: 'Entree model instance',
-        content: {'application/json': {schema: {'x-ts-type': Entree}}},
+        content: { 'application/json': { schema: { 'x-ts-type': Entree } } },
       },
     },
   })
@@ -41,7 +41,7 @@ export class EntreeController {
     responses: {
       '200': {
         description: 'Entree model count',
-        content: {'application/json': {schema: CountSchema}},
+        content: { 'application/json': { schema: CountSchema } },
       },
     },
   })
@@ -57,7 +57,7 @@ export class EntreeController {
         description: 'Array of Entree model instances',
         content: {
           'application/json': {
-            schema: {type: 'array', items: {'x-ts-type': Entree}},
+            schema: { type: 'array', items: { 'x-ts-type': Entree } },
           },
         },
       },
@@ -73,7 +73,7 @@ export class EntreeController {
     responses: {
       '200': {
         description: 'Entree PATCH success count',
-        content: {'application/json': {schema: CountSchema}},
+        content: { 'application/json': { schema: CountSchema } },
       },
     },
   })
@@ -88,13 +88,28 @@ export class EntreeController {
     responses: {
       '200': {
         description: 'Entree model instance',
-        content: {'application/json': {schema: {'x-ts-type': Entree}}},
+        content: { 'application/json': { schema: { 'x-ts-type': Entree } } },
       },
     },
   })
   async findById(@param.path.number('id') id: number): Promise<Entree> {
     return await this.entreeRepository.findById(id);
   }
+
+  @get('/entrees/{id}/category', {
+    responses: {
+      '200': {
+        description: 'Entree model Category instance',
+        content: { 'application/json': { schema: { 'x-ts-type': Category } } },
+      },
+    },
+  })
+  async getCategory(
+    @param.path.number('id') entreeId: typeof Entree.prototype.entree_id,
+  ): Promise<Category> {
+    return await this.entreeRepository.category(entreeId);
+  }
+
 
   @patch('/entrees/{id}', {
     responses: {

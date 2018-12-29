@@ -1,4 +1,5 @@
-import { Entity, model, property } from '@loopback/repository';
+import { Entity, model, property, belongsTo } from '@loopback/repository';
+import { Category } from './category.model';
 
 @model()
 export class Entree extends Entity {
@@ -31,10 +32,11 @@ export class Entree extends Entity {
   })
   display_content: string;
 
-  @property({
-    type: 'number',
-    required: true,
-  })
+  //@property({
+  //  type: 'number',
+  //  required: true,
+  //})
+  @belongsTo(() => Category, { keyTo: 'category_id' })
   category_id: number;
 
   constructor(data?: Partial<Entree>) {
