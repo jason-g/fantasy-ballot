@@ -1,2 +1,2 @@
-export * from './entree.model';
+export * from './entry.model';
 export * from './category.model';

@@ -1,2 +1,2 @@
-export * from './entree.repository';
+export * from './entry.repository';
 export * from './category.repository';

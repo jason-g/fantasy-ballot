@@ -1,4 +1,5 @@
-import {Entity, model, property} from '@loopback/repository';
+import { Entity, model, property } from '@loopback/repository';
+import { Entry } from './entry.model';
 
 @model()
 export class Category extends Entity {
@@ -19,6 +20,9 @@ export class Category extends Entity {
     type: 'string',
   })
   display_content?: string;
+
+  //@property.array(Entry)
+  //entries: Entry[];
 
   constructor(data?: Partial<Category>) {
     super(data);
