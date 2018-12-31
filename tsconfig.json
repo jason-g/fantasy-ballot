@@ -2,8 +2,9 @@
   "$schema": "http://json.schemastore.org/tsconfig",
   "compilerOptions": {
     "target": "esnext",
+    "noImplicitAny": true,
     // "allowJs": true,
-    //"skipLibCheck": false,
+    "skipLibCheck": true,
     //"esModuleInterop": true,
     //"allowSyntheticDefaultImports": true,
     //    "strict": true,

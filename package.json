@@ -57,6 +57,7 @@
     "@loopback/service-proxy": "^1.0.3",
     "@types/express-graphql": "^0.6.2",
     "@types/request-promise-native": "^1.0.15",
+    "cors": "^2.8.5",
     "express-graphql": "^0.7.1",
     "graphql": "^14.0.2",
     "loopback-connector-postgresql": "^3.5.0",
@@ -67,6 +68,8 @@
   "devDependencies": {
     "@loopback/build": "^1.0.1",
     "@loopback/testlab": "^1.0.1",
+    "@types/cors": "^2.8.4",
+    "@types/express": "^4.16.0",
     "@types/node": "^10.11.2"
   }
 }
