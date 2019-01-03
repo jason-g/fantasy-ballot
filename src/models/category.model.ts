@@ -1,4 +1,4 @@
-import { Entity, model, property } from '@loopback/repository';
+import { Entity, model, property, hasMany } from '@loopback/repository';
 import { Entry } from './entry.model';
 
 @model()
@@ -20,6 +20,9 @@ export class Category extends Entity {
     type: 'string',
   })
   display_content?: string;
+
+  @hasMany(() => Entry, { keyTo: 'category_id' })
+  entries: Entry[];
 
   //@property.array(Entry)
   //entries: Entry[];

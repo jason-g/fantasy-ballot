@@ -16,20 +16,20 @@ import {
   del,
   requestBody,
 } from '@loopback/rest';
-import {Category} from '../models';
-import {CategoryRepository} from '../repositories';
+import { Category } from '../models';
+import { CategoryRepository } from '../repositories';
 
 export class CategoryController {
   constructor(
     @repository(CategoryRepository)
-    public categoryRepository : CategoryRepository,
-  ) {}
+    public categoryRepository: CategoryRepository,
+  ) { }
 
   @post('/categories', {
     responses: {
       '200': {
         description: 'Category model instance',
-        content: {'application/json': {schema: {'x-ts-type': Category}}},
+        content: { 'application/json': { schema: { 'x-ts-type': Category } } },
       },
     },
   })
@@ -41,7 +41,7 @@ export class CategoryController {
     responses: {
       '200': {
         description: 'Category model count',
-        content: {'application/json': {schema: CountSchema}},
+        content: { 'application/json': { schema: CountSchema } },
       },
     },
   })
@@ -57,9 +57,19 @@ export class CategoryController {
         description: 'Array of Category model instances',
         content: {
           'application/json': {
-            schema: {type: 'array', items: {'x-ts-type': Category}},
+            schema: { type: 'array', items: { 'x-ts-type': Category } },
           },
         },
+        /*
+        links: {
+          address: {
+            operationId: "getEntries",
+            parameters: {
+              "category_id": 1,
+            }
+          },
+        },
+        */
       },
     },
   })
@@ -73,7 +83,7 @@ export class CategoryController {
     responses: {
       '200': {
         description: 'Category PATCH success count',
-        content: {'application/json': {schema: CountSchema}},
+        content: { 'application/json': { schema: CountSchema } },
       },
     },
   })
@@ -88,7 +98,7 @@ export class CategoryController {
     responses: {
       '200': {
         description: 'Category model instance',
-        content: {'application/json': {schema: {'x-ts-type': Category}}},
+        content: { 'application/json': { schema: { 'x-ts-type': Category } } },
       },
     },
   })

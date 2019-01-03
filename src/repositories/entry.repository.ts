@@ -15,19 +15,19 @@ export class EntryRepository extends DefaultCrudRepository<
   Entry,
   typeof Entry.prototype.entry_id
   > {
-  public readonly category: BelongsToAccessor<
-    Category,
-    typeof Entry.prototype.entry_id
-    >;
+  //public readonly category: BelongsToAccessor<
+  //  Category,
+  //  typeof Entry.prototype.entry_id
+  //  >;
   constructor(
     @inject('datasources.ldb') dataSource: LdbDataSource,
-    @repository.getter('CategoryRepository')
-    CategoryRepositoryGetter: Getter<CategoryRepository>,
+    //@repository.getter('CategoryRepository')
+    //CategoryRepositoryGetter: Getter<CategoryRepository>,
   ) {
     super(Entry, dataSource);
-    this.category = this.createBelongsToAccessorFor(
-      'category_id',
-      CategoryRepositoryGetter,
-    );
+    //this.category = this.createBelongsToAccessorFor(
+    //  'category_id',
+    //  CategoryRepositoryGetter,
+    //);
   }
 }

@@ -32,11 +32,10 @@ export class Entry extends Entity {
   })
   display_content: string;
 
-  //@property({
-  //  type: 'number',
-  //  required: true,
-  //})
-  @belongsTo(() => Category, { keyTo: 'category_id' })
+  @property({
+    type: 'number',
+    required: true,
+  })
   category_id: number;
 
   constructor(data?: Partial<Entry>) {

@@ -52,6 +52,7 @@ export class EntryController {
   }
 
   @get('/entries', {
+    //operationId: "getEntries",
     responses: {
       '200': {
         description: 'Array of Entry model instances',
@@ -96,6 +97,7 @@ export class EntryController {
     return await this.entryRepository.findById(id);
   }
 
+  /*
   @get('/entries/{id}/category', {
     responses: {
       '200': {
@@ -109,7 +111,7 @@ export class EntryController {
   ): Promise<Category> {
     return await this.entryRepository.category(entryId);
   }
-
+*/
 
   @patch('/entries/{id}', {
     responses: {
