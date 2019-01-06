@@ -59,16 +59,20 @@ export class CategoryController {
           'application/json': {
             schema: { type: 'array', items: { 'x-ts-type': Category } },
           },
+
+        },
+        links: {
+          "entrees": {
+            operationId: 'getEntries',
+            //"$ref": "#/entries",
+            parameters: {
+              //  "category_id": 1,
+            },
+            description: 'List of Entries for this Category'
+          }
         },
         /*
-        links: {
-          address: {
-            operationId: "getEntries",
-            parameters: {
-              "category_id": 1,
-            }
-          },
-        },
+
         */
       },
     },
@@ -79,6 +83,9 @@ export class CategoryController {
     return await this.categoryRepository.find(filter);
   }
 
+  /*
+  TBD
+  ref: https://github.com/strongloop/oasgraph/issues/87
   @patch('/categories', {
     responses: {
       '200': {
@@ -93,6 +100,7 @@ export class CategoryController {
   ): Promise<Count> {
     return await this.categoryRepository.updateAll(category, where);
   }
+  */
 
   @get('/categories/{id}', {
     responses: {

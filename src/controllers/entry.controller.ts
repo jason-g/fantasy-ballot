@@ -52,7 +52,7 @@ export class EntryController {
   }
 
   @get('/entries', {
-    //operationId: "getEntries",
+    operationId: "getEntries",
     responses: {
       '200': {
         description: 'Array of Entry model instances',
@@ -70,6 +70,9 @@ export class EntryController {
     return await this.entryRepository.find(filter);
   }
 
+  /*
+  TBD
+  ref: https://github.com/strongloop/oasgraph/issues/87
   @patch('/entries', {
     responses: {
       '200': {
@@ -84,6 +87,7 @@ export class EntryController {
   ): Promise<Count> {
     return await this.entryRepository.updateAll(entry, where);
   }
+  */
 
   @get('/entries/{id}', {
     responses: {
