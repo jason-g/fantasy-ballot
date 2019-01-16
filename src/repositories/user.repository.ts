@@ -18,13 +18,15 @@ export class UserRepository extends DefaultCrudRepository<
     const salt = genSaltSync();
     const hashed = hashSync(entity.password, salt);
     entity.password = hashed;
+    console.log('ENTITY add:' + entity);
     return super.create(entity, options);
   }
 
-  /*
-  TBD
-  update(entity: T, options?: Options): Promise<void> {
-
+  replaceById(id: number, entity: User, options?: Options): Promise<void> {
+    const salt = genSaltSync();
+    const hashed = hashSync(entity.password, salt);
+    entity.password = hashed;
+    console.log('ENTITY update:' + entity);
+    return super.replaceById(id, entity, options);
   }
-  */
 }
