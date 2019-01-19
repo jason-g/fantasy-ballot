@@ -6,7 +6,7 @@ export class Entry extends Entity {
   @property({
     type: 'number',
     id: true,
-    required: true,
+    generated: true,
   })
   entry_id: number;
 
