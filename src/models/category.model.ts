@@ -1,5 +1,5 @@
 import { Entity, model, property, hasMany } from '@loopback/repository';
-import { Entry } from './entry.model';
+//import { Entry } from './entry.model';
 
 @model()
 export class Category extends Entity {
@@ -21,8 +21,8 @@ export class Category extends Entity {
   })
   display_content?: string;
 
-  @hasMany(() => Entry, { keyTo: 'category_id' })
-  entries: Entry[];
+  //@hasMany(() => Entry, { keyTo: 'category_id' })
+  //entries?: Entry[];
 
   //@property.array(Entry)
   //entries: Entry[];

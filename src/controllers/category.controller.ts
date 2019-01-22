@@ -61,6 +61,7 @@ export class CategoryController {
           },
 
         },
+        /*
         links: {
           "entrees": {
             operationId: 'getEntries',
@@ -71,8 +72,6 @@ export class CategoryController {
             description: 'List of Entries for this Category'
           }
         },
-        /*
-
         */
       },
     },

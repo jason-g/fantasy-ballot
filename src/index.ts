@@ -1,11 +1,12 @@
 import { FantasyBallotApplication } from './application';
 import { ApplicationConfig } from '@loopback/core';
-import * as cors from "cors";
+//import * as cors from "cors";
 
+/*
 const OASGraph = require('oasgraph');
 const express = require('express');
 const graphqlHTTP = require('express-graphql');
-
+*/
 export { FantasyBallotApplication };
 
 export async function main(options: ApplicationConfig = {}) {
@@ -17,6 +18,8 @@ export async function main(options: ApplicationConfig = {}) {
   console.log(`Server is running at ${url}`);
   console.log(`Try ${url}/ping`);
 
+  // Remove GraphQL support until it is more stable
+  /*
   try {
     const { schema } = await
       OASGraph.createGraphQlSchema(
@@ -57,8 +60,6 @@ export async function main(options: ApplicationConfig = {}) {
   } catch (err) {
     console.log('Error starting graphQL:', err.message);
   }
-  //const { createGraphQlSchema } = require('oasgraph')
-  // load or construct OAS (const oas = ...)
-  //const { schema, report } = await createGraphQlSchema('http://127.0.0.1:3000/openapi.json');
+  */
   return app;
 }
